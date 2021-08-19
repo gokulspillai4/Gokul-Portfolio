@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono:wght@200;400;700&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: 0;
+    /* font-family: 'Roboto Mono', monospace; */
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Roboto Mono', monospace;
+
+}
+.navbar{
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    background: rgba(0, 0, 0, 0.6) !important;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.navbar-dark .navbar-nav .nav-link{
+    color: rgb(143, 143, 143);
+    padding: 20px;
+}
+.navbar-dark .navbar-nav .nav-link:after{
+    color: white;
+}
+.navbar-dark .navbar-nav .nav-link:hover{
+    color: white;
+    transition-duration: 1.5s;
+}
+.navbar-dark .navbar-nav .nav-link:not(:hover){
+    color: rgb(143, 143, 143);
+    transition-duration: 1.5s;
+}
+.avatar{
+    margin-top: 17vw;
+    margin-left: 12vw;
+    width: 200px; height: 200px;
+}
+.title-text{
+    margin-top: 18vw;
+    margin-left: 1vw;
+    font-weight: bold;
+}
+.subtitle-text{
+    margin-left: 1vw;
+    font-weight: bold;
+}
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    margin-top: 8%;
+    margin-bottom: 5%;
+    width: 50%;               
+    background-color: rgba(128, 128, 128, 0.247);
+    height: 1px;
+  }
+  .vr {
+    border-right: 6px solid rgba(128, 128, 128, 0.247);
+    height: 41vh;            
+  }
+  .icons{
+
+  }
+
+.align-center{
+    margin-left: auto;
+    margin-right: auto;
+}
+.input-box{
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 17px;
+    height: 50px;
+    width: 330px;
+    border-radius: 6px;
+    border: 1px solid #dddfe2;
+    margin-bottom: 11px;
+    
+}
+#submit-button{
+    height: 50px;
+    width: 330px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    color: white;
+    background: grey;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+#submit-button:hover{
+    background: rgb(56, 56, 56);
+    transition-duration: 1.5s;
+}
+#submit-button:not(:hover){
+    background: grey;
+    transition-duration: 1.5s;
+}
+#msg-box{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30%;
+    padding-top: 7%;
+    font-size: 17px;
+    height: 50px;
+    width: 330px;
+    border-radius: 6px;
+    border: 1px solid #dddfe2;
+    margin-bottom: 11px;
+}
+.warning-text{
+    display: none;
+    color: red;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
