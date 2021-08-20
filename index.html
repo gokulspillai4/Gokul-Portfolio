@@ -160,15 +160,14 @@
               <form id="submit-form" action="">
                 <td>
                   <input type="text" class="input-box" id="name" name="name"
-                    oninput="this.value = this.value.replace(/[^A-Z. ^a-z]/g, '');"
+                    
                     placeholder="Name">
                   <br>
                   <h8 class="warning-text" id="name-warning">Enter a valid name</h8>
                 </td>
             </tr>
             <tr>
-              <td scope="row"><input class="input-box" type="text" id="tel" maxlength="10"
-                  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" name="tel"
+              <td scope="row"><input class="input-box" type="text" id="tel" name="tel"
                   placeholder="Mobile">
                 <br>
                 <h8 class="warning-text" id="tel-warning">Enter a 10 digit mobile number</h8>
@@ -176,7 +175,7 @@
 
             </tr>
             <tr>
-              <td scope="row"><input class="input-box" type="text" id="email" name="email" oninput="this.value = this.value.replace(/[^0-9@a-zA-Z.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Email address">
+              <td scope="row"><input class="input-box" type="text" id="email" name="email"  placeholder="Email address">
                 <br>
                 <h8 class="warning-text" id="email-warning">Enter a valid email</h8>
               </td>
@@ -217,9 +216,15 @@
 
     $(document).ready(function () {
 
-      $("#name").blur(function () {
+      $("#name").on('input',function(){
+        this.value = this.value.replace(/[^ a-zA-Z]/, '').replace(/(\..*)\./, '$1');
+      })
+
+      $("#name").on('input',function () {
+        
         var name = $(this).val()
-        if (name.length < 3) {
+        
+        if (name.length < 3 ) {
           $(this).css({ "border-color": "red" })
           $("#name-warning").show()
           nameflag = 0;
@@ -230,14 +235,11 @@
           nameflag = 1;
         }
       })
-      $(document).on("keydown", "#name", function (evt) {
-        var firstChar = this.selectionStart
-        if (evt.keyCode == 32 && firstChar == 0) {
-          $(this).css({ "border-color": "red" })
-          $("#name-warning").show()
-        }
-      });
-      $("#tel").blur(function () {
+
+      $("#tel").on('input',function(){
+        this.value = this.value.replace(/[^0-9]/, '').replace(/(\..*)\./, '$1');
+      })
+      $("#tel").on('input',function () {
         var tel = $(this).val()
         if (tel.length != 10) {
           $("#tel-warning").show()
@@ -250,7 +252,9 @@
           telflag = 1;
         }
       })
-      $("#msg-box").blur(function () {
+
+
+      $("#msg-box").on('input',function () {
         var msg = $(this).val()
         if (msg.length < 4) {
           $("#msg-warning").show()
@@ -264,14 +268,19 @@
         }
 
       })
+
+
+      $("#email").on('input',function(){
+        this.value = this.value.replace(/[^0-9@a-zA-Z.]/g, '').replace(/(\..*)\./g, '$1');
+      })
       function validateEmail(email) {
         var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
         return emailReg.test(email);
       }
 
-      $("#email").blur(function () {
+      $("#email").on('input',function () {
         var email = $(this).val()
-
+        
         if (!validateEmail(email)||email=='') {
           $("#email-warning").show()
           $(this).css({ "border-color": "red" })
@@ -284,6 +293,8 @@
         }
       })
     })
+
+
   </script>
   <script>
 
