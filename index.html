@@ -179,7 +179,7 @@
                 <td>
                   <input type="text" class="input-box" id="name" name="name" placeholder="Name">
                   <br>
-                  <h8 class="warning-text" id="name-warning">Enter a valid name</h8>
+                  <h8 class="warning-text"  id="name-warning" >Enter a valid name</h8>
                 </td>
             </tr>
             <tr>
@@ -279,9 +279,9 @@
       })
 
 
-      $("#email").on('input', function () {
-        this.value = this.value.replace(/[^0-9@a-zA-Z.]/g, '').replace(/(\..*)\./g, '$1');
-      })
+      // $("#email").on('input', function () {
+      //   this.value = this.value.replace(/[^0-9@a-zA-Z.]/, '').replace(/(\..*)\./, '$1');
+      // })
       function validateEmail(email) {
         var emailReg = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         return emailReg.test(email);
