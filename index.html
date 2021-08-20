@@ -199,8 +199,8 @@
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
     crossorigin="anonymous"></script>
     <script>
-      var nameflag=0
-      var emailflag=0,telflag=0,msgflag=0;
+      var nameflag=2
+      var emailflag=2,telflag=2,msgflag=2;
 
       $(document).ready(function(){
         
@@ -273,7 +273,7 @@ if( !validateEmail(email)) {
     })
     </script>
      <script>
-       if(nameflag==emailflag==telflag==msgflag==0){
+       if(nameflag==emailflag==telflag==msgflag==1){
       $("#submit-form").submit((e)=>{
           e.preventDefault()
           $.ajax({
