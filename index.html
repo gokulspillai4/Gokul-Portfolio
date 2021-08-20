@@ -150,11 +150,11 @@
     <!-- Contact -->
     <div class="contact " id="contact">
       <div class="row p-5">
-        <h2 class="subtitle-text align-center p">Contact</h2>
+        <h2 class="subtitle-text align-center p-5">Contact</h2>
         <br>
       </div>
       <div class="row justify-content-center">
-        <div class="col-auto p-5">
+        <div class="col-auto p-r-2">
           <table class="table table-borderless login-form justify-content-center align-center">
             <tr>
               <form id="submit-form" action="">
@@ -212,6 +212,13 @@
                 $("#name-warning").hide()
               }
         })
+        $(document).on("keydown","#name" ,function(evt){
+     var firstChar = this.selectionStart
+     if(evt.keyCode == 32 && firstChar == 0){
+      $(this).css({"border-color":"red"})
+                $("#name-warning").show()
+     }
+});
         $("#tel").blur(function(){
             var tel=$(this).val()
               if(tel.length!=10){
@@ -235,6 +242,23 @@
               }
         
       })
+      function validateEmail(email) {
+        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+          return emailReg.test( email );
+}
+
+$("#email").blur(function(){
+            var email=$(this).val()
+            
+if( !validateEmail(email)) { 
+  $("#email-warning").show()
+                $(this).css({"border-color":"red"})
+              }
+              else{
+                $("#email-warning").hide()
+                $(this).css({"border-color":"green"})
+              }
+            })
     })
     </script>
      <script>
@@ -250,8 +274,8 @@
                   //window.location.href="https://google.com"
               },
               error:function (err){
-                  alert("Something Error")
-  
+                  alert("Some Error")
+  y
               }
           })
       })
