@@ -106,11 +106,13 @@
       <br>
       <p class="para p-5">An emerging web developer tech enthusiast seeking a role to enhance and explore my technical
         knowledge and for building a tech career in a reputed and dynamic organization.
-       <br>I've completed my Bachelors in Computer Science & Engineering from Heera College of Engineering & Technology in the 
-       year 2021. Since childhood, I was attracted towards computers and that made me choose this field.<br>
-       Currently I'm working on my career as a web developer. Saying about my college life, it gave me the ability to conquer any difficulties 
-       which are coming into my way and also it helped me to develop my leadership skills too.
-        </p>
+        <br>I've completed my Bachelors in Computer Science & Engineering from Heera College of Engineering & Technology
+        in the
+        year 2021. Since childhood, I was attracted towards computers and that made me choose this field.<br>
+        Currently I'm working on my career as a web developer. Saying about my college life, it gave me the ability to
+        conquer any difficulties
+        which are coming into my way and also it helped me to develop my leadership skills too.
+      </p>
 
     </div>
     <!-- skills -->
@@ -179,7 +181,7 @@
                 <td>
                   <input type="text" class="input-box" id="name" name="name" placeholder="Name">
                   <br>
-                  <h8 class="warning-text"  id="name-warning" >Enter a valid name</h8>
+                  <h8 class="warning-text" id="name-warning">Enter a valid name</h8>
                 </td>
             </tr>
             <tr>
@@ -230,9 +232,9 @@
     var emailflag = false, telflag = false, msgflag = false;
 
     $(document).ready(function () {
-      $('.navbar-collapse a').click(function(){
-            $(".navbar-collapse").collapse('hide');
-        });
+      $('.navbar-collapse a').click(function () {
+        $(".navbar-collapse").collapse('hide');
+      });
 
       $("#name").on('input', function () {
         this.value = this.value.replace(/[^ a-zA-Z]/, '').replace(/(\..*)\./, '$1');
@@ -282,7 +284,7 @@
       })
 
 
-      
+
       function validateEmail(email) {
         var emailReg = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         return emailReg.test(email);
